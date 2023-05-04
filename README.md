@@ -1,2 +1,7 @@
-# scg-kubernetes
-My personal k8s instances for @SystemConsultantGroup test cluster.
+# 이현우의 쿠버네티즈 탐방
+
+> 100%가 토이 프로젝트입니다
+
+쿠버네티즈 어려워요...
+일단 정말 심플하게 namespace + pod만으로 만드는 중
+나중에는 deployment라던지 다른 기능을 찾아봐야겠죠
