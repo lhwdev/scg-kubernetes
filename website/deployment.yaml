@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: lhwdev-website
+  namespace: lhwdev
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: lhwdev-website
+  replicas: 1
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: lhwdev-website
+    spec:
+      nodeName: master # 아직 복잡한 persistent 설정하기는 귀찮아요
+      containers:
+        - name: server
+          image: node
+          command: ["node"]
+          args: ["/home/lhwdev/kubernetes-website-test"]
+          resources:
+            limits:
+              memory: 128Mi
+              cpu: 500m
+          ports:
+            # HTTP server
+            - containerPort: 80

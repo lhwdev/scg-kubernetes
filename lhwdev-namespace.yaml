@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+
+metadata:
+  name: headscale
+  labels:
+    scg.skku.ac.kr/author: lhwdev
+
+    app.kubernetes.io/name: lhwdev-namespace
+    app.kubernetes.io/version: "0.0.1"
+
+  annotations:
+    scg.skku.ac.kr/target: lhwdev/personal
+
+    docs/created-by: lhwdev
+    kubernetes.io/description: |
+      A namespace to contain all personal works by lhwdev.
