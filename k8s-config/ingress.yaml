@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: lhwdev-practice
+  name: lhwdev-practice-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - lhwdev.scg.skku.ac.kr
+      secretName: lhwdev-tls
+  # 어떤 도메인/경로와 어떤 서비스+포트를 연결해줄 것인지 설정
+  rules:
+    - host: lhwdev.scg.skku.ac.kr
+      http:
+        paths:
+          - backend:
+              service:
+                name: lhwdev-practice-service
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix

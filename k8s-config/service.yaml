@@ -1,0 +1,19 @@
+# 초록색 부분만 변경
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: lhwdev-practice
+  name: lhwdev-practice-service
+spec:
+  # EntryPoint(서비스로 들어오고 나갈 포트번호)
+  ports:
+    # 외부->내부로 들어갈 포트번호
+    - port: 80
+      # 내부->파드로 나갈 포트번호
+      targetPort: 80
+      protocol: TCP
+  # 서비스 유형
+  type: NodePort
+  # 어떤 레이블(이름표)을 가진 파드를 같은 팀으로 선택할 것인지 설정
+  selector:
+    app.kubernetes.io/name: lhwdev-website

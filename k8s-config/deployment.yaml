@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: lhwdev-website
-  namespace: lhwdev
+  namespace: lhwdev-practice
 spec:
   selector:
     matchLabels:
@@ -12,15 +12,21 @@ spec:
 
   template:
     metadata:
+      namespace: lhwdev-practice
       labels:
         app.kubernetes.io/name: lhwdev-website
     spec:
       nodeName: master # 아직 복잡한 persistent 설정하기는 귀찮아요
+
       containers:
         - name: server
-          image: node
-          command: ["node"]
-          args: ["/home/lhwdev/kubernetes-website-test"]
+          image: lhwdev/k8s-website-test:1.0.2
+          command: ["npm"]
+          args: ["run", "serve"]
+          workingDir: "/usr/share/website-test"
+          env:
+            - name: "NAME"
+              value: "VALUE"
           resources:
             limits:
               memory: 128Mi
