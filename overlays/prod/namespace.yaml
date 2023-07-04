@@ -1,5 +1,15 @@
-apiVersion: app/v1
-kind: namespace
+apiVersion: v1
+kind: Namespace
 
 metadata:
   name: lhwdev-practice
+  labels:
+    scg.skku.ac.kr/author: lhwdev
+    scg.skku.ac.kr/project-type: practice
+
+  annotations:
+    scg.skku.ac.kr/target: scg-internal
+
+    docs/created-by: lhwdev
+    kubernetes.io/description: |
+      Practice namespace.
