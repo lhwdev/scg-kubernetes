@@ -38,6 +38,10 @@ jobs:
         with:
           version: 6.0.2
       
+      - name: Pnpm Install
+        run: |
+          pnpm
+      
       - name: Docker Setup QEMU
         uses: docker/setup-qemu-action@v2.1.0
       
