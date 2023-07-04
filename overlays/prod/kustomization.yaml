@@ -7,4 +7,4 @@ resources:
 - namespace.yaml
 images:
 - name: lhwdev/k8s-website-test
-  newTag: 5bd47bdc23f103c5016a3e335890437c6eef0db7
+  newTag: 8a0e3d08324e126ed4952496310af2c98a65baa3
