@@ -54,7 +54,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v4.0.0
         with:
-          context: .
+          context: repo
           platforms: linux/amd64,linux/arm64/v8
           push: true
           tags: ${{ steps.meta.outputs.tags }}
@@ -80,9 +80,9 @@ jobs:
 
       - name: Commit minifest files
         run: |
-          cd ${{ env.config_repo_path }}
-          git config --global user.email "sce06147@gmail.com"
-          git config --global user.name "KoHyunsu"
+          cd config
+          git config --global user.email "lhwdev6@outlook.com"
+          git config --global user.name "lhwdev"
           git commit -am "fix(infra): container image tag updated"
           git push -u origin main
 
