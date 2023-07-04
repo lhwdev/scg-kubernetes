@@ -9,6 +9,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: lhwdev-website
   replicas: 1
+  revisionHistoryLimit: 0 # NOT FOR PRODUCTION: I won't use rollback in dev
 
   template:
     metadata:
