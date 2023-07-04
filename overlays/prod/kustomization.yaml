@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: lhwdev-practice
 
 resources:
-  - ../../base
+- ../../base
   # - namespace.yaml
 images:
-  - name: lhwdev/k8s-website-test
-    newTag: (placeholder)
+- name: lhwdev/k8s-website-test
+  newTag: 55a25ac6daa131ec5d0c8caae9811ce9aa5165ed
