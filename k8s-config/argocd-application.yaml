@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lhwdev-practice
+  namespace: argocd
+
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/lhwdev/scg-kubernetes
+    targetRevision: HEAD
+    path: k8s-config/dev/
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy: {}
