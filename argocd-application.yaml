@@ -8,8 +8,9 @@ spec:
   project: default
   source:
     repoURL: https://github.com/lhwdev/scg-kubernetes
-    targetRevision: HEAD
-    path: k8s-config/dev/
+    targetRevision: k8s-config
+    path: overlays/prod
   destination:
     server: https://kubernetes.default.svc
-  syncPolicy: {}
+  syncPolicy:
+    automated: {}
