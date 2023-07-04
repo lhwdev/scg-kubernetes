@@ -78,11 +78,11 @@ jobs:
           kustomize edit set image ${{ env.dockerimage_name }}:${{ env.dockerimage_tag }}
           cat kustomization.yaml
 
-      - name: Commit minifest files
+      - name: Commit manifest files
         run: |
           cd config
           git config --global user.email "lhwdev6@outlook.com"
           git config --global user.name "lhwdev"
           git commit -am "fix(infra): container image tag updated"
-          git push -u origin main
+          git push -u origin ${{ env.config_branch }}
 
